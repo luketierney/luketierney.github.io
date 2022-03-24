@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {margin:0;}
+            .header{
+                overflow: hidden;
+                position: fixed;
+                background: black;
+                min-height:4em;
+                top: 0;
+                z-index:99;
+                width: 100%;}
+            .header a{
+                float:left;
+                display: block;
+                padding: .9em 1em;
+                color: white;
+                min-height: 4em;
+                font-size: 100%;
+                vertical-align:middle;}
+            .header a:hover{
+                background: black;
+                color: orange;}
+            .main{
+                padding: 1em;
+                margin-bottom: 2em;
+                height: 100%}
+            .image{
+                ;position: relative;
+                text-align:center}
+            .centerimage{
+                position:absolute;
+                top:30%;
+                left:50%;
+                transform: translate(-50%, -50%);}
+            .row{
+                content:"";
+                clear:both;
+                display:table;
+                width: 100%;
+                vertical-align:middle;
+                background: linear-gradient(135deg, rgba(171,225,35,1) 25%, rgba(146,124,234,1) 50%, rgba(190,208,145,1) 75%, rgba(183,242,160,1) 100%);}
+            .column{
+                float:left;
+                width 50%;
+                vertical-align:middle;}
+            #Win{
+                font-size:3em;
+                color:orange;
+            background: linear-gradient(135deg, rgba(4,176,5,1) 25%, rgba(0,255,130,1) 50%, rgba(1,59,255,1) 75%, rgba(0,0,0,1) 100%);}
+            #Win2{
+                font-size:4em;
+                color:white;}
+            #min{
+            font-size:2em;}
+            #max{
+            font-size:2em}
+            #TitleName{
+            color:blue;}
+            #ImageText{
+                color:magenta;}
+        </style>
+    </head>
+    <body>
+        <div class="header"><h3>
+            <a href="index.html"><img src="squareme.jpeg" style="border-radius: 50%; width:4em;height:4em;"></a>            
+            <a href="index.html"style="text-decoration: none"><font color="red"><b>Games, Apps, and Information</b></font></a>
+            <a href="Whatisbinary.html"style="text-decoration: none">What is Binary?</a>
+            <a href="Binaryconverter.html"style="text-decoration: none">Binary Converter</a>
+            <a href="Rockpaperscissors.html"style="text-decoration: none">Rock, Paper, and Scissors</a>
+            <a href="Randomnumbergenerator.html"style="text-decoration: none">Random Number Generator</a>
+            </h3></div>
+        <p><font size=4em>.</font></p>
+        <img src ="Random.jpg">
+        <div class="centerimage"><font family="DM Sans" size=20em color=orange id="ImageText"><b>Random Number Generator</b></font></div>
+        <div class="row">
+            <div class="column" style="width:75%">
+                <center>
+                    <br><h1 id="TitleName">Random Number Generator</h1>
+                    <br>
+                    <p><input type="text" id="min" placeholder="Enter Min" ></p>
+                    <p><input type="text" id="max" placeholder="Enter Max" ></p>
+                    <button id="Win">Generate Random Number</button>
+                    <p id="Win2"><p>
+                </center>
+            </div>
+            <div class="column" style="width:25%">
+                <img src="Random2.jpg" style="width:100%">
+            </div>
+        </div>
+        <script>
+            let Win = document.getElementById("Win");
+            Win.addEventListener('click', event => {Ran();});
+            var Ran = function(){
+                console.log("test");
+                var y = document.querySelector('#min').value;
+                var z = document.querySelector('#max').value;
+                console.log("y="+y);
+                console.log("z="+z);
+                var x = Math.floor((Math.random() * z) + y) + 1;
+                console.log("x="+x);
+                document.getElementById("Win2").textContent = x;
+            }
+        </script>
+    </body>
+</html>

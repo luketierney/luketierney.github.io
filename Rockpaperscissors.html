@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {margin:0;}
+            .header{
+                overflow: hidden;
+                position: fixed;
+                background: black;
+                min-height:4em;
+                top: 0;
+                z-index:99;
+                width: 100%;}
+            .header a{
+                float:left;
+                display: block;
+                padding: .9em 1em;
+                color: white;
+                min-height: 4em;
+                font-size: 100%;
+                vertical-align:middle;}
+            .header a:hover{
+                background: black;
+                color: orange;}
+            .main{
+                padding: 1em;
+                margin-bottom: 2em;
+                height: 100%}
+            .image{
+                ;position: relative;
+                text-align:center}
+            .centerimage{
+                position:absolute;
+                top:30%;
+                left:50%;
+                transform: translate(-50%, -50%);}
+            .row{
+                content:"";
+                clear:both;
+                display:table;
+                width: 100%;
+                vertical-align:middle;
+                background: linear-gradient(135deg, rgba(235,167,16,1) 25%, rgba(237,202,130,1) 50%, rgba(184,217,234,1) 75%, rgba(146,141,174,1) 100%);}
+            .column{
+                float:left;
+                width 50%;
+                vertical-align:middle;}
+            #Win{
+                font-size:4em;
+                color:blue;}
+            #Win2{
+            font-size:5em}
+        </style>
+    </head>
+    <body>
+        <div class="header"><h3>
+            <a href="index.html"><img src="squareme.jpeg" style="border-radius: 50%; width:4em;height:4em;"></a>            
+            <a href="index.html"style="text-decoration: none"><font color="red"><b>Games, Apps, and Information</b></font></a>
+            <a href="Whatisbinary.html"style="text-decoration: none">What is Binary?</a>
+            <a href="Binaryconverter.html"style="text-decoration: none">Binary Converter</a>
+            <a href="Rockpaperscissors.html"style="text-decoration: none">Rock, Paper, and Scissors</a>
+            <a href="Randomnumbergenerator.html"style="text-decoration: none">Random Number Generator</a>
+            </h3></div>
+        <p><font size=4em>.</font></p>
+        <img src ="Rockpaperscissors2.jpg">
+        <div class="centerimage"><font family="DM Sans" size=20em color=orange><b>Rock, Paper and Scissors</b></font></div>
+        <div class="row">
+            <div class="column" style="width:75%">
+                <center>
+                    <br><h1 style="font-size=:10em;">Rock, Paper and Scissors Game</h1>
+                    <br>
+                    <h2>Enter Rock, Paper, or Scissors into the box below and then click out of the box. You will then find out if you won.</h2>
+                    <p><input type="text" id="Win2" placeholder="Enter Text" onblur="Game()"></p>
+                        <p><span id="Win"></span></p>
+
+                </center>
+            </div>
+            <div class="column" style="width:25%">
+                <img src="RockPaperScissors.jpg" style="width:100%">
+            </div>
+        </div>
+        <script>
+            var Game = function(){
+                var y = function(){
+                    var z = Math.floor((Math.random() * 3) + 1);
+                    if(z==1){document.getElementById("Win").textContent = "You Win";};
+                    if(z==2){document.getElementById("Win").textContent = "You Tie";};
+                    if(z==3){document.getElementById("Win").textContent = "You Lose";};
+                }
+                var x = document.querySelector('input').value;
+                if(x=="rock"){y()}
+                else if(x=="Rock"){y()}
+                else if(x=="paper"){y()}
+                else if(x=="Paper"){y()}
+                else if(x=="scissors"){y()}
+                else if(x=="Scissors"){y()}
+                else if(x=="scissor"){y()}
+                else if(x=="Scissor"){y()}
+                else{
+                    {document.getElementById("Win").textContent = "Please enter a Valid Answer";}
+                }
+            }
+        </script>
+    </body>
+</html>

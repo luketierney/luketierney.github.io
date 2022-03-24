@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {margin:0;}
+            .header{
+                overflow: hidden;
+                position: fixed;
+                background: black;
+                min-height:4em;
+                top: 0;
+                z-index:99;
+                width: 100%;}
+            .header a{
+                float:left;
+                display: block;
+                padding: .9em 1em;
+                color: white;
+                min-height: 4em;
+                font-size: 100%;
+                vertical-align:middle;}
+            .header a:hover{
+                background: black;
+                color: orange;}
+            .main{
+                padding: 1em;
+                margin-bottom: 2em;
+                height: 100%}
+            .image{
+                ;position: relative;
+                text-align:center}
+            .centerimage{
+                position:absolute;
+                top:30%;
+                left:50%;
+                transform: translate(-50%, -50%);}
+            .row{
+                content:"";
+                clear:both;
+                display:table;
+                width: 100%;
+                vertical-align:middle;
+                background:  linear-gradient(135deg, rgba(137,46,189,1) 25%, rgba(25,142,189,1) 50%, rgba(25,43,222,1) 75%, rgba(171,233,33,1) 100%);}
+            .column{
+                float:left;
+                width 50%;
+                vertical-align:middle;}
+            .convert{
+                text-align:center;
+                font-size:2.75em;
+                width:100%;}
+            input {
+                width:3em;
+                font-size:3em;
+                color:magenta;}
+            input:hover{
+                border:none;
+                border-bottom:5px solid orange;}
+            #bit{
+                font-size:3em;
+                color:orange;}
+        </style>
+        
+    </head>
+    <body>
+        <div class="header"><h3>
+            <a href="index.html"><img src="squareme.jpeg" style="border-radius: 50%; width:4em;height:4em;"></a>            
+            <a href="index.html"style="text-decoration: none"><font color="red"><b>Games, Apps, and Information</b></font></a>
+            <a href="Whatisbinary.html"style="text-decoration: none">What is Binary?</a>
+            <a href="Binaryconverter.html"style="text-decoration: none">Binary Converter</a>
+            <a href="Rockpaperscissors.html"style="text-decoration: none">Rock, Paper, and Scissors</a>
+            <a href="Randomnumbergenerator.html"style="text-decoration: none">Random Number Generator</a>
+            </h3></div>
+        <p><font size=4em>.</font></p>
+        <img src ="Binary4.jpg">
+        <div class="centerimage"><font family="DM Sans" size=20em color=orange><b>Binary Converter</b></font></div>
+        <div class="row">
+            <div class="column" style="width:75%">
+                <center>
+                    <br><h1 style="font-size=:10em;">Binary Converter</h1>
+                    <br><div class="convert">
+            <p><input type="number" placeholder="Enter Number" onblur="BinaryConvert()"> = <span id="bit">0</span> in binary.</p>
+                    </div>
+                </center>
+            </div>
+            <div class="column" style="width:25%">
+                <img src="Binary2.jpg" style="width:100%">
+            </div>
+        </div>
+        <script>
+var BinaryConvert = function() {
+    var BinaryX = document.querySelector('input').value;
+    var result = '';
+    var result2 = '';
+    var Binary = [];
+    var BinaryY = -1;
+    for (BinaryZ = BinaryX; 0 < BinaryZ; BinaryZ = Math.floor(BinaryZ / 2)) { 
+        if(BinaryZ % 2 >= 10) { 
+            Binary.push([BinaryZ % 2 - 10]);
+        } else { 
+            Binary.push(BinaryZ % 2);} 
+        BinaryY = BinaryY + 1;} 
+    for (BinaryA = BinaryY; BinaryA >= 0; BinaryA--) {
+        const result = (Binary[BinaryA]);
+        var result2 = result2 + result
+        console.log(result2);
+        console.log(result);}
+        document.getElementById("bit").textContent = result2;};
+        </script>
+    </body>
+</html>
